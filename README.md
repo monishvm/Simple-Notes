@@ -28,7 +28,7 @@ Proudly 💪 made in Kotlin
 </thead>
 <tbody>
 <tr>
-<td> <img src="app/src/main/res/drawable/add.gif" width="150" ></td>
+<td> <img src="Simple Notes/rsz_21.jpg" width="150" ></td>
 <td> <img src="app/src/main/res/drawable/edit2.gif" width="150" ></td>
 <td> <img src="app/src/main/res/drawable/delete.gif" width="150" ></td>
 </tr>
