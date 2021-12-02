@@ -1,0 +1,34 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">#272727</item>
+        <item name="colorPrimaryDark">#000000</item>
+        <item name="colorAccent">#272727</item>
+    </style>
+
+    <style name="title_input" parent="Widget.AppCompat.EditText">
+        <item name="android:background">@drawable/title_input_bg</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:maxLength">15</item>
+        <item name="android:maxLines">1</item>
+        <item name="fontWeight">40</item>
+        <item name="android:hint">@string/title</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:inputType">textCapSentences</item>
+    </style>
+
+    <style name="description_input" parent="Widget.AppCompat.EditText">
+        <item name="android:background">@drawable/description_input_bg</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:gravity">start</item>
+        <item name="fontWeight">20</item>
+        <item name="android:hint">@string/desc</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">match_parent</item>
+    </style>
+
+</resources>

@@ -1,0 +1,126 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'kotlin-kapt'
+
+apply plugin: "androidx.navigation.safeargs.kotlin"
+
+apply plugin: 'com.huawei.agconnect'
+
+
+android {
+    compileSdkVersion 31
+    defaultConfig {
+        applicationId "com.monishvm.simplenotes"
+        minSdkVersion 19
+        targetSdkVersion 31
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = ["room.schemaLocation": "$projectDir/schemas".toString()]
+            }
+        }
+    }
+
+    signingConfigs {
+        config {
+            storeFile file('D:\\andoid_studio_projects\\Simple-Notes-Kotlin-App-master\\simple_note.jks')
+            storePassword '123456'
+            keyPassword '123456'
+            keyAlias 'simple_note'
+        }
+    }
+    buildTypes {
+        debug {
+            signingConfig signingConfigs.config
+        }
+        release {
+            signingConfig signingConfigs.config
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    def room_version = "2.3.0"
+    def lifecycle_version = "2.2.0"
+    def dagger_version = "2.35.1"
+    def recycler_view = "1.1.0"
+    def nav_version = "2.3.5"
+
+//    implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.appcompat:appcompat:1.3.1'
+    implementation 'androidx.core:core-ktx:1.6.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.1'
+
+    //Room library
+    implementation "androidx.room:room-runtime:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
+
+    //ViewModel and LiveData
+    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
+
+    //Dagger
+    api "com.google.dagger:dagger:$dagger_version"
+    kapt "com.google.dagger:dagger-compiler:$dagger_version"
+
+    //Dagger Android
+    api "com.google.dagger:dagger-android:$dagger_version"
+    api "com.google.dagger:dagger-android-support:$dagger_version"
+    kapt "com.google.dagger:dagger-android-processor:$dagger_version"
+
+    //Kotlin
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.1"
+
+    //Coroutines LiveData Scope
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.3.1"
+
+    //RecyclerView
+    implementation "androidx.recyclerview:recyclerview:1.2.1"
+
+    //Material library
+    implementation 'com.google.android.material:material:1.4.0'
+
+    //Navigation Component
+    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+
+    // HMS
+    implementation 'com.huawei.agconnect:agconnect-core:1.5.2.300'
+    // Account kit
+    implementation 'com.huawei.hms:hwid:6.1.0.302'
+
+    // ML Kit
+    implementation 'com.huawei.hms:ml-computer-vision-textimagesuperresolution-model:2.0.3.300'
+
+    implementation 'com.huawei.hms:ml-computer-vision-ocr:2.0.5.301'
+    // Import the Latin-based language model package.
+    implementation 'com.huawei.hms:ml-computer-vision-ocr-latin-model:2.0.5.301'
+    // Import the Japanese and Korean model package.
+    implementation 'com.huawei.hms:ml-computer-vision-ocr-jk-model:2.0.5.301'
+    // Import the Chinese and English model package.
+    implementation 'com.huawei.hms:ml-computer-vision-ocr-cn-model:2.0.5.301'
+
+    // Picasso
+    implementation "com.squareup.picasso:picasso:2.4.0"
+}
+

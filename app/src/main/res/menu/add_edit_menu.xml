@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/option_scan"
+        android:icon="@drawable/ic_pick_image"
+        android:title="Scan"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/option_save"
+        android:icon="@drawable/ic_done"
+        app:showAsAction="ifRoom"
+        android:title="Save" />
+</menu>
